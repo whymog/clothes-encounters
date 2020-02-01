@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,11 +8,13 @@ public class GameManager : MonoBehaviour
 
   public static string sceneName = "";
   public static int sceneIndex = 0;
+  public static bool canAdvanceScene = true;
+
+  private IEnumerator coroutine;
 
   void Start()
   {
     DontDestroyOnLoad(this.gameObject);
-
     this.UpdateSceneNameAndIndex();
   }
 
@@ -31,6 +34,25 @@ public class GameManager : MonoBehaviour
   void OnSceneLoaded(Scene scene, LoadSceneMode mode)
   {
     UpdateSceneNameAndIndex();
+
+    if (scene.name == "Tutorial")
+    {
+      canAdvanceScene = false;
+      coroutine = Timer(5.0f);
+      StartCoroutine(coroutine);
+    }
+    else
+    {
+      canAdvanceScene = true;
+    }
+  }
+
+  private IEnumerator Timer(float seconds)
+  {
+    Debug.Log(seconds);
+    yield return new WaitForSeconds(seconds);
+    canAdvanceScene = true;
+    Debug.Log("Ready to advance to next scene");
   }
 
   // Update is called once per frame

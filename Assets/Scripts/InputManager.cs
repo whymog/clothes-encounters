@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Space))
     {
       Debug.Log("Pressed Space");
-      if (GameManager.sceneName == "Title" || GameManager.sceneName == "Tutorial")
+      if (GameManager.canAdvanceScene == true && (GameManager.sceneName == "Title" || GameManager.sceneName == "Tutorial"))
       {
         SceneManager.LoadScene(GameManager.sceneIndex + 1);
       }
