@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
   public static int turnNumber = 0;
   public static int maxTurns = 6;
 
-  public string correctSock1;
-  public string correctSock2;
-  public string correctSock3;
-  public string correctSock4;
-  public string correctSock5;
-  public string correctSock6;
+  public static string correctSock1 = "Cute";
+  public static string correctSock2 = "Sport";
+  public static string correctSock3 = "Goose";
+  public static string correctSock4 = "Googly";
+  public static string correctSock5 = "Fuzzy";
+  public static string correctSock6 = "Striped";
 
   private IEnumerator coroutine;
 

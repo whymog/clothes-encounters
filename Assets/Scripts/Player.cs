@@ -25,6 +25,21 @@ public class Player : MonoBehaviour
   public GameObject ResultText;
   public GameObject ResultTextDescription;
 
+  public Sprite SockCute;
+  public Sprite SockCuteShadow;
+  public Sprite SockFuzzy;
+  public Sprite SockFuzzyShadow;
+  public Sprite SockGoogly;
+  public Sprite SockGooglyShadow;
+  public Sprite SockGoose;
+  public Sprite SockGooseShadow;
+  public Sprite SockPompom;
+  public Sprite SockPompomShadow;
+  public Sprite SockSport;
+  public Sprite SockSportShadow;
+  public Sprite SockStriped;
+  public Sprite SockStripedShadow;
+
   // Start is called before the first frame update
   void Start()
   {
