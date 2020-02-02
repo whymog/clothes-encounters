@@ -799,6 +799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085279587}
   - component: {fileID: 1085279589}
+  - component: {fileID: 1085279590}
   - component: {fileID: 1085279588}
   m_Layer: 5
   m_Name: Player 1 Right Score
@@ -945,6 +946,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085279586}
   m_CullTransparentMesh: 0
+--- !u!114 &1085279590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085279586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188df4a7b341b41ca840b641600b24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 1
 --- !u!1 &1152424093
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152424094}
   - component: {fileID: 1152424096}
+  - component: {fileID: 1152424097}
   - component: {fileID: 1152424095}
   m_Layer: 5
   m_Name: Player 1 Left Score
@@ -1101,6 +1116,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152424093}
   m_CullTransparentMesh: 0
+--- !u!114 &1152424097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152424093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188df4a7b341b41ca840b641600b24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 1
 --- !u!1 &1512808914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707816420}
   - component: {fileID: 1707816422}
+  - component: {fileID: 1707816423}
   - component: {fileID: 1707816421}
   m_Layer: 5
   m_Name: Player 2 Right Score
@@ -1413,6 +1442,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707816419}
   m_CullTransparentMesh: 0
+--- !u!114 &1707816423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707816419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188df4a7b341b41ca840b641600b24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 2
 --- !u!1 &1838768026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1838768027}
   - component: {fileID: 1838768029}
+  - component: {fileID: 1838768030}
   - component: {fileID: 1838768028}
   m_Layer: 5
   m_Name: Player 2 Left Score
@@ -1569,6 +1612,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838768026}
   m_CullTransparentMesh: 0
+--- !u!114 &1838768030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838768026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188df4a7b341b41ca840b641600b24a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 2
 --- !u!1 &1842835852
 GameObject:
   m_ObjectHideFlags: 0
