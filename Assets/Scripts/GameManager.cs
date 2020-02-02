@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
   public static string sceneName = "";
   public static int sceneIndex = 0;
   public static bool canAdvanceScene = true;
+  public static bool isGameBeingPlayed = false;
+  public static bool isGameOver = false;
+  public static int player1Score = 0;
+  public static int player2Score = 0;
 
   private IEnumerator coroutine;
 
@@ -45,6 +49,17 @@ public class GameManager : MonoBehaviour
     {
       canAdvanceScene = true;
     }
+
+    if (scene.name == "Game")
+    {
+      isGameBeingPlayed = true;
+    }
+    else
+    {
+      isGameBeingPlayed = false;
+    }
+
+    // TODO: When the game ends, set isGameOver to true and advance to the final scene. Not sure where that goes yet.
   }
 
   private IEnumerator Timer(float seconds)
