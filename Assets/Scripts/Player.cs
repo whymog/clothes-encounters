@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
   private bool isBetweenTurns;
   private bool isEndOfTurn;
   private bool correctGuess;
+  private bool isGameOver;
 
   private IEnumerator timerCoroutine;
 
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     correctGuess = false;
     isBetweenTurns = false;
     isEndOfTurn = false;
+    isGameOver = false;
 
     if (turnLength <= 0)
     {
@@ -119,6 +121,12 @@ public class Player : MonoBehaviour
       {
         ResultText.GetComponent<TextMeshProUGUI>().text = "Incorrect...";
         ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You done goofed :(";
+      }
+
+      if (GameManager.turnNumber >= GameManager.maxTurns && !isGameOver)
+      {
+        isGameOver = true;
+        GameManager.isGameOver = true;
       }
     }
   }

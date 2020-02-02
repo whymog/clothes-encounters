@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
   public static int player1Score = 0;
   public static int player2Score = 0;
   public static int turnNumber = 0;
+  public static int maxTurns = 6;
 
   private IEnumerator coroutine;
 
