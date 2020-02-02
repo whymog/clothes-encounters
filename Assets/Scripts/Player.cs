@@ -8,9 +8,12 @@ public class Player : MonoBehaviour
 
   public int playerNumber;
   private bool isBetweenTurns;
-  public static bool isPlayerInputAllowed;
+  private bool isEndOfTurn;
+  private bool correctGuess;
 
   private IEnumerator timerCoroutine;
+
+  public int turnLength;
 
   public GameObject Timer;
   public GameObject Wheel;
@@ -18,14 +21,28 @@ public class Player : MonoBehaviour
   public GameObject ClueText1;
   public GameObject ClueText2;
   public GameObject TurnTimer;
+  public GameObject ResultText;
+  public GameObject ResultTextDescription;
 
   // Start is called before the first frame update
   void Start()
   {
-    isPlayerInputAllowed = false;
+    correctGuess = false;
+    isBetweenTurns = false;
+    isEndOfTurn = false;
+
+    if (turnLength <= 0)
+    {
+      turnLength = 10;
+    }
+
     Clue.SetActive(false);
     ClueText1.GetComponent<TextMeshProUGUI>().text = "";
     ClueText2.GetComponent<TextMeshProUGUI>().text = "";
+    ResultText.GetComponent<TextMeshProUGUI>().text = "";
+    ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "";
+
+    GameManager.turnNumber = 1;
   }
 
   // Update is called once per frame
@@ -36,33 +53,70 @@ public class Player : MonoBehaviour
 
     if (GameManager.isBetweenTurns && !isBetweenTurns)
     {
+      Debug.Log("Is between turns");
+      isEndOfTurn = false;
       isBetweenTurns = true;
+      Clue.SetActive(false);
+
+      ResultText.GetComponent<TextMeshProUGUI>().text = "";
+      ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "";
+
       timerCoroutine = ShowInstructions();
       StartCoroutine(timerCoroutine);
-      // Show instructions based on which turn it is
-      if (playerNumber == 1 && GameManager.turnNumber % 2 != 0)
-      {
-        // Odd turn number - player 1 sees search instructions
-
-      }
     }
     else if (!GameManager.isBetweenTurns && isBetweenTurns)
     {
+      isBetweenTurns = false;
+      Debug.Log("Is turn");
+
       // If player is giving hints, show this stuff
-      if (playerNumber == 1 && GameManager.turnNumber % 2 == 0)
+      if ((playerNumber == 1 && GameManager.turnNumber % 2 == 0) || (playerNumber == 2 && GameManager.turnNumber % 2 != 0))
       {
-        isBetweenTurns = false;
         Clue.SetActive(true);
         // Stop showing interstitial screen and allow round interaction
         ClueText1.GetComponent<TextMeshProUGUI>().text = "Text 1";
         ClueText2.GetComponent<TextMeshProUGUI>().text = "Text 2";
+      }
+      else
+      {
+        // The player is choosing
+        // Show wheel
 
-        // Start timer
-        timerCoroutine = TakeTurn(30);
-        StartCoroutine(timerCoroutine);
+        // When player makes choice, note it as correct or incorrect
+        // Stop guess music
+
+        // TODO: Kill Game Turn coroutine (StopCoroutine()) if player guesses
+      }
+
+      // Start turn timer
+      timerCoroutine = TakeTurn(turnLength);
+      StartCoroutine(timerCoroutine);
+    }
+    else if (GameManager.isEndOfTurn && !isEndOfTurn)
+    {
+      Debug.Log("Is end of turn");
+
+      isEndOfTurn = true;
+      StopCoroutine(timerCoroutine);
+
+      // Update text to 0
+      TurnTimer.GetComponent<TextMeshProUGUI>().text = "";
+
+      // Show results + text
+      ClueText1.GetComponent<TextMeshProUGUI>().text = "";
+      ClueText2.GetComponent<TextMeshProUGUI>().text = "";
+
+      if (correctGuess)
+      {
+        ResultText.GetComponent<TextMeshProUGUI>().text = "Correct!";
+        ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You did it!";
+      }
+      else
+      {
+        ResultText.GetComponent<TextMeshProUGUI>().text = "Incorrect...";
+        ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You done goofed :(";
       }
     }
-    // TODO: Kill Game Turn coroutine (StopCoroutine()) if player guesses
   }
 
   IEnumerator ShowInstructions()
@@ -87,15 +141,15 @@ public class Player : MonoBehaviour
   {
     while (seconds > 0)
     {
+      Debug.Log(seconds);
       TurnTimer.GetComponent<TextMeshProUGUI>().text = seconds.ToString();
       yield return new WaitForSeconds(1f);
       seconds--;
     }
-    // Update text to 0
-    TurnTimer.GetComponent<TextMeshProUGUI>().text = seconds.ToString();
 
     // End turn
     // TODO: Create end of turn method
     Debug.Log("Turn over");
+    GameManager.isEndOfTurn = true;
   }
 }

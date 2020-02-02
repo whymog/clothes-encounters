@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
   public static bool canAdvanceScene = true;
   public static bool isBetweenTurns = true;
   public static bool isGameBeingPlayed = false;
-  public static bool isGameOver = true;
+  public static bool isGameOver = false;
+  public static bool isEndOfTurn = false;
   public static int player1Score = 0;
   public static int player2Score = 0;
   public static int turnNumber = 0;
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
     if (scene.name == "Tutorial")
     {
       canAdvanceScene = false;
-      coroutine = Timer(5.0f);
+      coroutine = Timer(0f); // TODO: Set to 5f when done
       StartCoroutine(coroutine);
     }
     else

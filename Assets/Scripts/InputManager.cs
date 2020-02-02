@@ -29,9 +29,17 @@ public class InputManager : MonoBehaviour
       else if (GameManager.sceneName == "Game")
       {
         // Handle game input here; hacky, I know, but whatever
-        if (Player.isPlayerInputAllowed)
+        if (!GameManager.isBetweenTurns && !GameManager.isEndOfTurn)
         {
-          // Ok, do it
+          // Turn is in progress - space makes a selection
+          GameManager.isEndOfTurn = true;
+        }
+        else if (GameManager.isEndOfTurn)
+        {
+          // Start new turn
+          GameManager.turnNumber++;
+          GameManager.isBetweenTurns = true;
+          GameManager.isEndOfTurn = false;
         }
       }
     }
