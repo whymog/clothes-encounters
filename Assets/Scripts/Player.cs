@@ -15,11 +15,17 @@ public class Player : MonoBehaviour
   public GameObject Timer;
   public GameObject Wheel;
   public GameObject Clue;
+  public GameObject ClueText1;
+  public GameObject ClueText2;
+  public GameObject TurnTimer;
 
   // Start is called before the first frame update
   void Start()
   {
     isPlayerInputAllowed = false;
+    Clue.SetActive(false);
+    ClueText1.GetComponent<TextMeshProUGUI>().text = "";
+    ClueText2.GetComponent<TextMeshProUGUI>().text = "";
   }
 
   // Update is called once per frame
@@ -42,9 +48,21 @@ public class Player : MonoBehaviour
     }
     else if (!GameManager.isBetweenTurns && isBetweenTurns)
     {
-      isBetweenTurns = false;
-      // Stop showing interstitial screen and allow round interaction
+      // If player is giving hints, show this stuff
+      if (playerNumber == 1 && GameManager.turnNumber % 2 == 0)
+      {
+        isBetweenTurns = false;
+        Clue.SetActive(true);
+        // Stop showing interstitial screen and allow round interaction
+        ClueText1.GetComponent<TextMeshProUGUI>().text = "Text 1";
+        ClueText2.GetComponent<TextMeshProUGUI>().text = "Text 2";
+
+        // Start timer
+        timerCoroutine = TakeTurn(30);
+        StartCoroutine(timerCoroutine);
+      }
     }
+    // TODO: Kill Game Turn coroutine (StopCoroutine()) if player guesses
   }
 
   IEnumerator ShowInstructions()
@@ -63,5 +81,21 @@ public class Player : MonoBehaviour
     yield return new WaitForSeconds(1f);
     Timer.GetComponent<TextMeshProUGUI>().text = "";
     GameManager.isBetweenTurns = false;
+  }
+
+  IEnumerator TakeTurn(int seconds)
+  {
+    while (seconds > 0)
+    {
+      TurnTimer.GetComponent<TextMeshProUGUI>().text = seconds.ToString();
+      yield return new WaitForSeconds(1f);
+      seconds--;
+    }
+    // Update text to 0
+    TurnTimer.GetComponent<TextMeshProUGUI>().text = seconds.ToString();
+
+    // End turn
+    // TODO: Create end of turn method
+    Debug.Log("Turn over");
   }
 }
