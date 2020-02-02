@@ -69,6 +69,8 @@ public class Player : MonoBehaviour
       isBetweenTurns = false;
       Debug.Log("Is turn");
 
+      GameManager.isTurnInProgress = true;
+
       // If player is giving hints, show this stuff
       if ((playerNumber == 1 && GameManager.turnNumber % 2 == 0) || (playerNumber == 2 && GameManager.turnNumber % 2 != 0))
       {
@@ -98,6 +100,8 @@ public class Player : MonoBehaviour
 
       isEndOfTurn = true;
       StopCoroutine(timerCoroutine);
+
+      GameManager.isTurnInProgress = false;
 
       // Update text to 0
       TurnTimer.GetComponent<TextMeshProUGUI>().text = "";

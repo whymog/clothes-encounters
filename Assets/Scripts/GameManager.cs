@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
   public static int sceneIndex = 0;
   public static bool canAdvanceScene = true;
   public static bool isBetweenTurns = true;
+  public static bool isTurnInProgress = false;
   public static bool isGameBeingPlayed = false;
   public static bool isGameOver = false;
   public static bool isEndOfTurn = false;
+  public static bool lastGuessWasCorrect = false;
   public static int player1Score = 0;
   public static int player2Score = 0;
   public static int turnNumber = 0;
