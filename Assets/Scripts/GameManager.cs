@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
   public static int sceneIndex = 0;
   public static bool canAdvanceScene = true;
   public static bool isGameBeingPlayed = false;
-  public static bool isGameOver = false;
+  public static bool isGameOver = true;
   public static int player1Score = 0;
   public static int player2Score = 0;
 
@@ -27,6 +27,15 @@ public class GameManager : MonoBehaviour
     Scene scene = SceneManager.GetActiveScene();
     sceneName = scene.name;
     sceneIndex = scene.buildIndex;
+
+    // Reset stuff on title for repeat plays
+    if (sceneName == "Title")
+    {
+      isGameBeingPlayed = false;
+      isGameOver = false;
+      player1Score = 0;
+      player2Score = 0;
+    }
   }
 
   // called first

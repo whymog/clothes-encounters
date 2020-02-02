@@ -17,7 +17,14 @@ public class InputManager : MonoBehaviour
       Debug.Log("Pressed Space");
       if (GameManager.canAdvanceScene == true && (GameManager.sceneName != "Game" || GameManager.sceneName == "Game" && GameManager.isGameOver == true))
       {
-        SceneManager.LoadScene(GameManager.sceneIndex + 1);
+        if (GameManager.sceneName == "Results")
+        {
+          SceneManager.LoadScene(0);
+        }
+        else
+        {
+          SceneManager.LoadScene(GameManager.sceneIndex + 1);
+        }
       }
     }
   }
