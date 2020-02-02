@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
   public static string sceneName = "";
   public static int sceneIndex = 0;
   public static bool canAdvanceScene = true;
+  public static bool isBetweenTurns = true;
   public static bool isGameBeingPlayed = false;
   public static bool isGameOver = true;
   public static int player1Score = 0;
   public static int player2Score = 0;
+  public static int turnNumber = 0;
 
   private IEnumerator coroutine;
 
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Reset stuff on title for repeat plays
     if (sceneName == "Title")
     {
+      isBetweenTurns = true;
       isGameBeingPlayed = false;
       isGameOver = false;
       player1Score = 0;

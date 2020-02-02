@@ -26,6 +26,14 @@ public class InputManager : MonoBehaviour
           SceneManager.LoadScene(GameManager.sceneIndex + 1);
         }
       }
+      else if (GameManager.sceneName == "Game")
+      {
+        // Handle game input here; hacky, I know, but whatever
+        if (Player.isPlayerInputAllowed)
+        {
+          // Ok, do it
+        }
+      }
     }
   }
 }
