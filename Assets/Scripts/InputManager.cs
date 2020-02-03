@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
         if (!GameManager.isBetweenTurns && !GameManager.isEndOfTurn)
         {
           // Turn is in progress - space makes a selection
-          GameManager.isEndOfTurn = true;
+          // GameManager.isEndOfTurn = true;
         }
         else if (GameManager.isEndOfTurn)
         {

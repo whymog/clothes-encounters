@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
   public GameObject Timer;
   public GameObject Wheel;
+  public GameObject Selector;
   public GameObject Clue;
   public GameObject ClueText1;
   public GameObject ClueText2;
@@ -54,6 +55,8 @@ public class Player : MonoBehaviour
     }
 
     Clue.SetActive(false);
+    Wheel.SetActive(false);
+    Selector.SetActive(false);
     ClueText1.GetComponent<TextMeshProUGUI>().text = "";
     ClueText2.GetComponent<TextMeshProUGUI>().text = "";
     ResultText.GetComponent<TextMeshProUGUI>().text = "";
@@ -74,6 +77,8 @@ public class Player : MonoBehaviour
       isEndOfTurn = false;
       isBetweenTurns = true;
       Clue.SetActive(false);
+      Wheel.SetActive(false);
+      Selector.SetActive(false);
 
       ResultText.GetComponent<TextMeshProUGUI>().text = "";
       ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "";
@@ -137,6 +142,8 @@ public class Player : MonoBehaviour
       {
         // The player is choosing
         // Show wheel
+        Wheel.SetActive(true);
+        Selector.SetActive(true);
 
         // When player makes choice, note it as correct or incorrect
         // Stop guess music
@@ -165,6 +172,8 @@ public class Player : MonoBehaviour
       ClueText2.GetComponent<TextMeshProUGUI>().text = "";
 
       Clue.SetActive(true);
+      Wheel.SetActive(false);
+      Selector.SetActive(false);
       if (GameManager.turnNumber == 1)
       {
         Clue.GetComponent<SpriteRenderer>().sprite = SockCute;
