@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Selector : MonoBehaviour
 {
+  public static string selectedSock = "";
+
   // Start is called before the first frame update
   void Start()
   {
@@ -14,5 +16,7 @@ public class Selector : MonoBehaviour
   void OnTriggerEnter2D(Collider2D collider)
   {
     Debug.Log(collider.name);
+
+    selectedSock = collider.name;
   }
 }

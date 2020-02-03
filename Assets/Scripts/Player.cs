@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
         Clue.GetComponent<SpriteRenderer>().sprite = SockStriped;
       }
 
-      if (correctGuess)
+      if (GameManager.lastGuessWasCorrect)
       {
         ResultText.GetComponent<TextMeshProUGUI>().text = "Correct!";
 

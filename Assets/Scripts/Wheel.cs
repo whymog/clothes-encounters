@@ -37,9 +37,57 @@ public class Wheel : MonoBehaviour
     }
     else if (Input.GetKeyDown(KeyCode.Space))
     {
-      // check collision
-      // if correct, set lastGuessWasCorrect to true
-      // otherwise set to false
+      Debug.Log("space!");
+      if (GameManager.turnNumber == 1 && Selector.selectedSock == "SockCute")
+      {
+        GameManager.lastGuessWasCorrect = true;
+        GameManager.player1Score++;
+        GameManager.player2Score++;
+      }
+      else if (GameManager.turnNumber == 2 && Selector.selectedSock == "SockSport")
+      {
+        GameManager.lastGuessWasCorrect = true;
+        GameManager.player1Score++;
+        GameManager.player2Score++;
+      }
+      else if (GameManager.turnNumber == 3 && Selector.selectedSock == "SockGoose")
+      {
+        GameManager.lastGuessWasCorrect = true;
+        GameManager.player1Score++;
+        GameManager.player2Score++;
+      }
+      else if (GameManager.turnNumber == 4 && Selector.selectedSock == "SockGoogly")
+      {
+        GameManager.lastGuessWasCorrect = true;
+        GameManager.player1Score++;
+        GameManager.player2Score++;
+      }
+      else if (GameManager.turnNumber == 5 && Selector.selectedSock == "Fuzzy")
+      {
+        GameManager.lastGuessWasCorrect = true;
+        GameManager.player1Score++;
+        GameManager.player2Score++;
+      }
+      else if (GameManager.turnNumber == 6 && Selector.selectedSock == "Striped")
+      {
+        GameManager.lastGuessWasCorrect = true;
+        GameManager.player1Score++;
+        GameManager.player2Score++;
+      }
+      else
+      {
+        GameManager.lastGuessWasCorrect = false;
+        if (GameManager.turnNumber % 2 == 0)
+        {
+          GameManager.player2Score--;
+        }
+        else
+        {
+          GameManager.player1Score--;
+        }
+      }
+
+      GameManager.isEndOfTurn = true;
     }
   }
 }
