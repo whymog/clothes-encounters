@@ -190,7 +190,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9999
   m_Sprite: {fileID: 21300000, guid: 866266099bead4cc5a576a63f81ea539, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -236,8 +236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: -177.95}
-  m_SizeDelta: {x: 381.1, y: 94.5}
+  m_AnchoredPosition: {x: -200, y: -217.8}
+  m_SizeDelta: {x: 381.1, y: 64.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233688406
 MonoBehaviour:
@@ -392,8 +392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -177.95}
-  m_SizeDelta: {x: 381.1, y: 94.5}
+  m_AnchoredPosition: {x: 200, y: -217.8}
+  m_SizeDelta: {x: 381.1, y: 64.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276656466
 MonoBehaviour:
@@ -548,7 +548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 158}
+  m_AnchoredPosition: {x: -200, y: 203}
   m_SizeDelta: {x: 381.1, y: 94.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513375780
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c17ee1b8da804ec4855250f49c866e7, type: 2}
   m_sharedMaterial: {fileID: -8206312847564536109, guid: 5c17ee1b8da804ec4855250f49c866e7,
@@ -951,7 +951,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 45.9
+  m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -992,13 +992,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 693926819}
-    characterCount: 2
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1470,20 +1470,20 @@ MonoBehaviour:
   TurnTimer: {fileID: 693926817}
   ResultText: {fileID: 1153866570}
   ResultTextDescription: {fileID: 276656464}
-  SockCute: {fileID: 0}
-  SockCuteShadow: {fileID: 0}
-  SockFuzzy: {fileID: 0}
-  SockFuzzyShadow: {fileID: 0}
-  SockGoogly: {fileID: 0}
-  SockGooglyShadow: {fileID: 0}
-  SockGoose: {fileID: 0}
-  SockGooseShadow: {fileID: 0}
-  SockPompom: {fileID: 0}
-  SockPompomShadow: {fileID: 0}
-  SockSport: {fileID: 0}
-  SockSportShadow: {fileID: 0}
-  SockStriped: {fileID: 0}
-  SockStripedShadow: {fileID: 0}
+  SockCute: {fileID: 21300000, guid: bf14108d282ba43099cebaea0c10b208, type: 3}
+  SockCuteShadow: {fileID: 21300000, guid: 866266099bead4cc5a576a63f81ea539, type: 3}
+  SockFuzzy: {fileID: 21300000, guid: 01df4c4d6056c44d7a54dc64f1054331, type: 3}
+  SockFuzzyShadow: {fileID: 21300000, guid: 1f348f690b988410c9297d72fcc30d9e, type: 3}
+  SockGoogly: {fileID: 21300000, guid: 6c3f306f1ae4440dc84ccac678a9cf6b, type: 3}
+  SockGooglyShadow: {fileID: 21300000, guid: e5b9ac3a45715481fba9f7ced6aa94ff, type: 3}
+  SockGoose: {fileID: 21300000, guid: 6a79956518e584712a8ca1fb6ccf0909, type: 3}
+  SockGooseShadow: {fileID: 21300000, guid: 46db62943a3e34e1cb585ae6518cb266, type: 3}
+  SockPompom: {fileID: 21300000, guid: ab23c436dc7ec4ea79f64432da3b7c05, type: 3}
+  SockPompomShadow: {fileID: 21300000, guid: 80e2c92f9f3de4d5897c98ad2c939145, type: 3}
+  SockSport: {fileID: 21300000, guid: 2440f087563be484c8da46d6cc4db45a, type: 3}
+  SockSportShadow: {fileID: 21300000, guid: 2d9b0baab037f4059a9684053697ba83, type: 3}
+  SockStriped: {fileID: 21300000, guid: fdc61265a03134071ac802d4935aa361, type: 3}
+  SockStripedShadow: {fileID: 21300000, guid: d21d7c534f9264a47903a8272566dd2f, type: 3}
 --- !u!1 &1000573039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,7 +1834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200.00006, y: 158}
+  m_AnchoredPosition: {x: 200.00006, y: 203}
   m_SizeDelta: {x: 381.1, y: 94.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153866572
@@ -2011,7 +2011,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9999
   m_Sprite: {fileID: 21300000, guid: 866266099bead4cc5a576a63f81ea539, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2268,7 +2268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c17ee1b8da804ec4855250f49c866e7, type: 2}
   m_sharedMaterial: {fileID: -8206312847564536109, guid: 5c17ee1b8da804ec4855250f49c866e7,
@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 45.9
+  m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2338,13 +2338,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1696396475}
-    characterCount: 2
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -2579,20 +2579,20 @@ MonoBehaviour:
   TurnTimer: {fileID: 1696396473}
   ResultText: {fileID: 513375778}
   ResultTextDescription: {fileID: 233688404}
-  SockCute: {fileID: 0}
-  SockCuteShadow: {fileID: 0}
-  SockFuzzy: {fileID: 0}
-  SockFuzzyShadow: {fileID: 0}
-  SockGoogly: {fileID: 0}
-  SockGooglyShadow: {fileID: 0}
-  SockGoose: {fileID: 0}
-  SockGooseShadow: {fileID: 0}
-  SockPompom: {fileID: 0}
-  SockPompomShadow: {fileID: 0}
-  SockSport: {fileID: 0}
-  SockSportShadow: {fileID: 0}
-  SockStriped: {fileID: 0}
-  SockStripedShadow: {fileID: 0}
+  SockCute: {fileID: 21300000, guid: bf14108d282ba43099cebaea0c10b208, type: 3}
+  SockCuteShadow: {fileID: 21300000, guid: 866266099bead4cc5a576a63f81ea539, type: 3}
+  SockFuzzy: {fileID: 21300000, guid: 01df4c4d6056c44d7a54dc64f1054331, type: 3}
+  SockFuzzyShadow: {fileID: 21300000, guid: 1f348f690b988410c9297d72fcc30d9e, type: 3}
+  SockGoogly: {fileID: 21300000, guid: 6c3f306f1ae4440dc84ccac678a9cf6b, type: 3}
+  SockGooglyShadow: {fileID: 21300000, guid: e5b9ac3a45715481fba9f7ced6aa94ff, type: 3}
+  SockGoose: {fileID: 21300000, guid: 6a79956518e584712a8ca1fb6ccf0909, type: 3}
+  SockGooseShadow: {fileID: 21300000, guid: 46db62943a3e34e1cb585ae6518cb266, type: 3}
+  SockPompom: {fileID: 21300000, guid: ab23c436dc7ec4ea79f64432da3b7c05, type: 3}
+  SockPompomShadow: {fileID: 21300000, guid: 80e2c92f9f3de4d5897c98ad2c939145, type: 3}
+  SockSport: {fileID: 21300000, guid: 2440f087563be484c8da46d6cc4db45a, type: 3}
+  SockSportShadow: {fileID: 21300000, guid: 2d9b0baab037f4059a9684053697ba83, type: 3}
+  SockStriped: {fileID: 21300000, guid: fdc61265a03134071ac802d4935aa361, type: 3}
+  SockStripedShadow: {fileID: 21300000, guid: d21d7c534f9264a47903a8272566dd2f, type: 3}
 --- !u!1001 &2105960030
 PrefabInstance:
   m_ObjectHideFlags: 0

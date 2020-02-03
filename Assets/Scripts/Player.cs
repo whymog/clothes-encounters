@@ -95,6 +95,32 @@ public class Player : MonoBehaviour
         // Stop showing interstitial screen and allow round interaction
         ClueText1.GetComponent<TextMeshProUGUI>().text = "Text 1";
         ClueText2.GetComponent<TextMeshProUGUI>().text = "Text 2";
+
+        // Hardcoded this shit I am so sorry
+        if (GameManager.turnNumber == 1)
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockCuteShadow;
+        }
+        else if (GameManager.turnNumber == 2)
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockSportShadow;
+        }
+        else if (GameManager.turnNumber == 3)
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockGooseShadow;
+        }
+        else if (GameManager.turnNumber == 4)
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockGooglyShadow;
+        }
+        else if (GameManager.turnNumber == 5)
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzyShadow;
+        }
+        else if (GameManager.turnNumber == 6)
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockStripedShadow;
+        }
       }
       else
       {
@@ -126,6 +152,31 @@ public class Player : MonoBehaviour
       // Show results + text
       ClueText1.GetComponent<TextMeshProUGUI>().text = "";
       ClueText2.GetComponent<TextMeshProUGUI>().text = "";
+
+      if (GameManager.turnNumber == 1)
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockCute;
+      }
+      else if (GameManager.turnNumber == 2)
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockSport;
+      }
+      else if (GameManager.turnNumber == 3)
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockGoose;
+      }
+      else if (GameManager.turnNumber == 4)
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockGoogly;
+      }
+      else if (GameManager.turnNumber == 5)
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzy;
+      }
+      else if (GameManager.turnNumber == 6)
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockStriped;
+      }
 
       if (correctGuess)
       {
