@@ -45,8 +45,11 @@ public class GameManager : MonoBehaviour
     if (sceneName == "Title")
     {
       isBetweenTurns = true;
+      isEndOfTurn = false;
       isGameBeingPlayed = false;
       isGameOver = false;
+      isTurnInProgress = false;
+      lastGuessWasCorrect = false;
       player1Score = 0;
       player2Score = 0;
       turnNumber = 0;
