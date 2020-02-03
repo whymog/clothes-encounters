@@ -62,13 +62,13 @@ public class Wheel : MonoBehaviour
         GameManager.player1Score++;
         GameManager.player2Score++;
       }
-      else if (GameManager.turnNumber == 5 && Selector.selectedSock == "Fuzzy")
+      else if (GameManager.turnNumber == 5 && Selector.selectedSock == "SockFuzzy")
       {
         GameManager.lastGuessWasCorrect = true;
         GameManager.player1Score++;
         GameManager.player2Score++;
       }
-      else if (GameManager.turnNumber == 6 && Selector.selectedSock == "Striped")
+      else if (GameManager.turnNumber == 6 && Selector.selectedSock == "SockStriped")
       {
         GameManager.lastGuessWasCorrect = true;
         GameManager.player1Score++;
