@@ -93,33 +93,44 @@ public class Player : MonoBehaviour
       {
         Clue.SetActive(true);
         // Stop showing interstitial screen and allow round interaction
-        ClueText1.GetComponent<TextMeshProUGUI>().text = "Text 1";
-        ClueText2.GetComponent<TextMeshProUGUI>().text = "Text 2";
+
 
         // Hardcoded this shit I am so sorry
         if (GameManager.turnNumber == 1)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockCuteShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "keeps you alive";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "dainty";
         }
         else if (GameManager.turnNumber == 2)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockSportShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "gatorade";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "headband";
         }
         else if (GameManager.turnNumber == 3)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockGooseShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "bread";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "anger";
         }
         else if (GameManager.turnNumber == 4)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockGooglyShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "ICU";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "wink";
         }
         else if (GameManager.turnNumber == 5)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzyShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "touch it";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "an aesthetic choice";
         }
         else if (GameManager.turnNumber == 6)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockStripedShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "delineation";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "contrast";
         }
       }
       else
@@ -153,6 +164,7 @@ public class Player : MonoBehaviour
       ClueText1.GetComponent<TextMeshProUGUI>().text = "";
       ClueText2.GetComponent<TextMeshProUGUI>().text = "";
 
+      Clue.SetActive(true);
       if (GameManager.turnNumber == 1)
       {
         Clue.GetComponent<SpriteRenderer>().sprite = SockCute;
@@ -181,12 +193,60 @@ public class Player : MonoBehaviour
       if (correctGuess)
       {
         ResultText.GetComponent<TextMeshProUGUI>().text = "Correct!";
-        ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You did it!";
+
+        if (GameManager.turnNumber == 1)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's from our first Valentine's Day together.";
+        }
+        else if (GameManager.turnNumber == 2)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "We made so many friends playing soccer in that local league. Those are good memories.";
+        }
+        else if (GameManager.turnNumber == 3)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "Remember when you saved me from that super angry goose?";
+        }
+        else if (GameManager.turnNumber == 4)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's kinda trippy. Remember when we got too high and tried to do magic eye puzzles?";
+        }
+        else if (GameManager.turnNumber == 5)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's fuzzy wuzzy!";
+        }
+        else if (GameManager.turnNumber == 6)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "The lines remind me of all of the highways we used to drive down.";
+        }
       }
       else
       {
         ResultText.GetComponent<TextMeshProUGUI>().text = "Incorrect...";
-        ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You done goofed :(";
+
+        if (GameManager.turnNumber == 1)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "Our first Valentine's together seems so far away. Are either of us the same people?";
+        }
+        else if (GameManager.turnNumber == 2)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "I always felt like I was more into soccer than you. I wish I'd kept going with it.";
+        }
+        else if (GameManager.turnNumber == 3)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You don't even remember our goose adventures? It's like I barely know you.";
+        }
+        else if (GameManager.turnNumber == 4)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It looks like your mom's eye. She was always judging me.";
+        }
+        else if (GameManager.turnNumber == 5)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "I normally love fuzzy things, but right now I just want to shave this sock.";
+        }
+        else if (GameManager.turnNumber == 6)
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "The lines remind me of how long I was trapped in this relationship with you.";
+        }
       }
 
       if (GameManager.turnNumber >= GameManager.maxTurns && !isGameOver)
