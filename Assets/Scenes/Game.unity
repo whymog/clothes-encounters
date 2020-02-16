@@ -2523,6 +2523,9 @@ MonoBehaviour:
   SockGooglyShadow: {fileID: 21300000, guid: e5b9ac3a45715481fba9f7ced6aa94ff, type: 3}
   SockGoose: {fileID: 21300000, guid: 6a79956518e584712a8ca1fb6ccf0909, type: 3}
   SockGooseShadow: {fileID: 21300000, guid: 46db62943a3e34e1cb585ae6518cb266, type: 3}
+  SockPipeCleaner: {fileID: 21300000, guid: 1fb0c822b7d6f426e9a1fb490879a86e, type: 3}
+  SockPipeCleanerShadow: {fileID: 21300000, guid: d6cfdbaf1c6c44ebda08115f7e944150,
+    type: 3}
   SockPompom: {fileID: 21300000, guid: ab23c436dc7ec4ea79f64432da3b7c05, type: 3}
   SockPompomShadow: {fileID: 21300000, guid: 80e2c92f9f3de4d5897c98ad2c939145, type: 3}
   SockSport: {fileID: 21300000, guid: 2440f087563be484c8da46d6cc4db45a, type: 3}
@@ -5543,6 +5546,9 @@ MonoBehaviour:
   SockGooglyShadow: {fileID: 21300000, guid: e5b9ac3a45715481fba9f7ced6aa94ff, type: 3}
   SockGoose: {fileID: 21300000, guid: 6a79956518e584712a8ca1fb6ccf0909, type: 3}
   SockGooseShadow: {fileID: 21300000, guid: 46db62943a3e34e1cb585ae6518cb266, type: 3}
+  SockPipeCleaner: {fileID: 21300000, guid: 1fb0c822b7d6f426e9a1fb490879a86e, type: 3}
+  SockPipeCleanerShadow: {fileID: 21300000, guid: d6cfdbaf1c6c44ebda08115f7e944150,
+    type: 3}
   SockPompom: {fileID: 21300000, guid: ab23c436dc7ec4ea79f64432da3b7c05, type: 3}
   SockPompomShadow: {fileID: 21300000, guid: 80e2c92f9f3de4d5897c98ad2c939145, type: 3}
   SockSport: {fileID: 21300000, guid: 2440f087563be484c8da46d6cc4db45a, type: 3}

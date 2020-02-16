@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
   public Sprite SockGooglyShadow;
   public Sprite SockGoose;
   public Sprite SockGooseShadow;
+  public Sprite SockPipeCleaner;
+  public Sprite SockPipeCleanerShadow;
   public Sprite SockPompom;
   public Sprite SockPompomShadow;
   public Sprite SockSport;
@@ -114,17 +116,11 @@ public class Player : MonoBehaviour
           ClueText1.GetComponent<TextMeshProUGUI>().text = "keeps you alive";
           ClueText2.GetComponent<TextMeshProUGUI>().text = "dainty";
         }
-        else if (sockName == "SockSport")
+        else if (sockName == "SockFuzzy")
         {
-          Clue.GetComponent<SpriteRenderer>().sprite = SockSportShadow;
-          ClueText1.GetComponent<TextMeshProUGUI>().text = "gatorade";
-          ClueText2.GetComponent<TextMeshProUGUI>().text = "headband";
-        }
-        else if (sockName == "SockGoose")
-        {
-          Clue.GetComponent<SpriteRenderer>().sprite = SockGooseShadow;
-          ClueText1.GetComponent<TextMeshProUGUI>().text = "bread";
-          ClueText2.GetComponent<TextMeshProUGUI>().text = "anger";
+          Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzyShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "touch it";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "an aesthetic choice";
         }
         else if (sockName == "SockGoogly")
         {
@@ -132,11 +128,23 @@ public class Player : MonoBehaviour
           ClueText1.GetComponent<TextMeshProUGUI>().text = "ICU";
           ClueText2.GetComponent<TextMeshProUGUI>().text = "wink";
         }
-        else if (sockName == "SockFuzzy")
+        else if (sockName == "SockGoose")
         {
-          Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzyShadow;
-          ClueText1.GetComponent<TextMeshProUGUI>().text = "touch it";
-          ClueText2.GetComponent<TextMeshProUGUI>().text = "an aesthetic choice";
+          Clue.GetComponent<SpriteRenderer>().sprite = SockGooseShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "bread";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "anger";
+        }
+        else if (sockName == "SockPipeCleaner")
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockPipeCleanerShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "twirly";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "sketchbook";
+        }
+        else if (sockName == "SockSport")
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockSportShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "gatorade";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "headband";
         }
         else if (sockName == "SockStriped")
         {
@@ -192,21 +200,25 @@ public class Player : MonoBehaviour
       {
         Clue.GetComponent<SpriteRenderer>().sprite = SockCute;
       }
-      else if (sockName == "SockSport")
+      else if (sockName == "SockFuzzy")
       {
-        Clue.GetComponent<SpriteRenderer>().sprite = SockSport;
-      }
-      else if (sockName == "SockGoose")
-      {
-        Clue.GetComponent<SpriteRenderer>().sprite = SockGoose;
+        Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzy;
       }
       else if (sockName == "SockGoogly")
       {
         Clue.GetComponent<SpriteRenderer>().sprite = SockGoogly;
       }
-      else if (sockName == "SockFuzzy")
+      else if (sockName == "SockGoose")
       {
-        Clue.GetComponent<SpriteRenderer>().sprite = SockFuzzy;
+        Clue.GetComponent<SpriteRenderer>().sprite = SockGoose;
+      }
+      else if (sockName == "SockPipeCleaner")
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockPipeCleaner;
+      }
+      else if (sockName == "SockSport")
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockSport;
       }
       else if (sockName == "SockStriped")
       {
@@ -226,21 +238,25 @@ public class Player : MonoBehaviour
         {
           ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's from our first Valentine's Day together.";
         }
-        else if (sockName == "SockSport")
+        else if (sockName == "SockFuzzy")
         {
-          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "We made so many friends playing soccer in that local league. Those are good memories.";
-        }
-        else if (sockName == "SockGoose")
-        {
-          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "Remember when you saved me from that super angry goose?";
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's fuzzy wuzzy!";
         }
         else if (sockName == "SockGoogly")
         {
           ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's kinda trippy. Remember when we got too high and tried to do magic eye puzzles?";
         }
-        else if (sockName == "SockFuzzy")
+        else if (sockName == "SockGoose")
         {
-          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's fuzzy wuzzy!";
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "Remember when you saved me from that super angry goose?";
+        }
+        else if (sockName == "SockPipeCleaner")
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "These socks are so lame, hahahaha.";
+        }
+        else if (sockName == "SockSport")
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "We made so many friends playing soccer in that local league. Those are good memories.";
         }
         else if (sockName == "SockStriped")
         {
@@ -259,21 +275,25 @@ public class Player : MonoBehaviour
         {
           ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "Our first Valentine's together seems so far away. Are either of us the same people?";
         }
-        else if (sockName == "SockSport")
+        else if (sockName == "SockFuzzy")
         {
-          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "I always felt like I was more into soccer than you. I wish I'd kept going with it.";
-        }
-        else if (sockName == "SockGoose")
-        {
-          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You don't even remember our goose adventures? It's like I barely know you.";
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "I normally love fuzzy things, but right now I just want to shave this sock.";
         }
         else if (sockName == "SockGoogly")
         {
           ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It looks like your mom's eye. She was always judging me.";
         }
-        else if (sockName == "SockFuzzy")
+        else if (sockName == "SockGoose")
         {
-          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "I normally love fuzzy things, but right now I just want to shave this sock.";
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You don't even remember our goose adventures? It's like I barely know you.";
+        }
+        else if (sockName == "SockPipeCleaner")
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's lame that you still wear these. You should throw them out.";
+        }
+        else if (sockName == "SockSport")
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "I always felt like I was more into soccer than you. I wish I'd kept going with it.";
         }
         else if (sockName == "SockStriped")
         {
