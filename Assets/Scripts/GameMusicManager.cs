@@ -9,7 +9,7 @@ public class GameMusicManager : MonoBehaviour
   private bool isEndSuccess = false;
   private bool isEndFailure = false;
 
-  public AudioSource audio;
+  public AudioSource audioSource;
   public AudioClip guessing;
   public AudioClip success;
   public AudioClip failure;
@@ -17,7 +17,7 @@ public class GameMusicManager : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-
+    audioSource = GetComponent<AudioSource>();
   }
 
   // Update is called once per frame
@@ -27,25 +27,25 @@ public class GameMusicManager : MonoBehaviour
     {
       Debug.Log("GameMusicManager: Between turns");
       isBetweenTurns = true;
-      audio.Stop();
+      audioSource.Stop();
     }
     else if (GameManager.isTurnInProgress && !isTurnInProgress)
     {
-      Debug.Log("GameMusicManager: Playing turn audio");
+      Debug.Log("GameMusicManager: Playing turn audioSource");
 
       isBetweenTurns = false;
       isEndFailure = false;
       isEndSuccess = false;
       isTurnInProgress = true;
-      audio.clip = guessing;
-      audio.Play(0);
+      audioSource.clip = guessing;
+      audioSource.Play(0);
     }
     else if (GameManager.isEndOfTurn && !isEndSuccess && !isEndFailure)
     {
       Debug.Log("GameMusicManager: End of turn");
 
       isTurnInProgress = false;
-      audio.Stop();
+      audioSource.Stop();
 
       if (GameManager.lastGuessWasCorrect)
       {
@@ -53,8 +53,8 @@ public class GameMusicManager : MonoBehaviour
 
         isEndSuccess = true;
         // Play success song
-        audio.clip = success;
-        audio.Play(0);
+        audioSource.clip = success;
+        audioSource.Play(0);
       }
       else
       {
@@ -62,8 +62,8 @@ public class GameMusicManager : MonoBehaviour
 
         isEndFailure = true;
         // Play failure song
-        audio.clip = failure;
-        audio.Play(0);
+        audioSource.clip = failure;
+        audioSource.Play(0);
       }
     }
   }
