@@ -13,6 +13,7 @@ public class Selector : MonoBehaviour
   public AudioClip sockFuzzyAudio;
   public AudioClip sockGooglyAudio;
   public AudioClip sockGooseAudio;
+  public AudioClip sockMonsterAudio;
   public AudioClip sockPipeCleanerAudio;
   public AudioClip sockPompomAudio;
   public AudioClip sockSportAudio;
@@ -46,6 +47,10 @@ public class Selector : MonoBehaviour
     else if (collider.name == "SockGoose")
     {
       clipToPlay = sockGooseAudio;
+    }
+    else if (collider.name == "SockMonster")
+    {
+      clipToPlay = sockMonsterAudio;
     }
     else if (collider.name == "SockPipeCleaner")
     {

@@ -12,11 +12,11 @@ public class Wheel : MonoBehaviour
 
     float radius = 3f;
 
-    for (int i = 0; i <= 9; i++)
+    for (int i = 0; i <= 10; i++)
     {
-      float angle = i * Mathf.PI * 2f / 9;
+      float angle = i * Mathf.PI * 2f / 10;
       socks[i].transform.localPosition = new Vector3(Mathf.Sin(angle) * radius, Mathf.Cos(angle) * radius, 0f);
-      socks[i].transform.localRotation = Quaternion.Euler(0, 0, -(float)i * 360f / 9f);
+      socks[i].transform.localRotation = Quaternion.Euler(0, 0, -(float)i * 360f / 10f);
     }
 
     gameObject.transform.localPosition = new Vector3(0, 0, 0);
@@ -28,12 +28,12 @@ public class Wheel : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
       // rotate left
-      transform.localRotation *= Quaternion.Euler(0, 0, 360f / 9f);
+      transform.localRotation *= Quaternion.Euler(0, 0, 360f / 10f);
     }
     else if (Input.GetKeyDown(KeyCode.RightArrow))
     {
       //rotate right
-      transform.localRotation *= Quaternion.Euler(0, 0, -360f / 9f);
+      transform.localRotation *= Quaternion.Euler(0, 0, -360f / 10f);
     }
     else if (Input.GetKeyDown(KeyCode.Space))
     {
