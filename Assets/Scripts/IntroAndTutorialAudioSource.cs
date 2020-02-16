@@ -13,7 +13,7 @@ public class IntroAndTutorialAudioSource : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (GameManager.sceneIndex > 1) // TODO: bump back to 2 or make less brittle when intro scene is back in
+    if (GameManager.sceneIndex > 3) // TODO: bump back to 2 or make less brittle when intro scene is back in
     {
       Destroy(gameObject);
     }
