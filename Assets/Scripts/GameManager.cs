@@ -85,8 +85,6 @@ public class GameManager : MonoBehaviour
     {
       isGameBeingPlayed = false;
     }
-
-    // TODO: When the game ends, set isGameOver to true and advance to the final scene. Not sure where that goes yet.
   }
 
   private IEnumerator Timer(float seconds)
@@ -95,11 +93,5 @@ public class GameManager : MonoBehaviour
     yield return new WaitForSeconds(seconds);
     canAdvanceScene = true;
     Debug.Log("Ready to advance to next scene");
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
   }
 }

@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
   public int playerNumber;
   private bool isBetweenTurns;
   private bool isEndOfTurn;
-  private bool correctGuess;
   private bool isGameOver;
 
   private IEnumerator timerCoroutine;
@@ -44,7 +43,6 @@ public class Player : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    correctGuess = false;
     isBetweenTurns = false;
     isEndOfTurn = false;
     isGameOver = false;
