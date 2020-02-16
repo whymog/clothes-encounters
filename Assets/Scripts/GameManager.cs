@@ -29,10 +29,51 @@ public class GameManager : MonoBehaviour
 
   private IEnumerator coroutine;
 
+  public static string[] sockOrder;
+
   void Start()
   {
     DontDestroyOnLoad(this.gameObject);
     this.UpdateSceneNameAndIndex();
+
+    sockOrder = generateSockOrder();
+    Debug.Log(sockOrder);
+    Debug.Log(sockOrder[1]);
+  }
+
+  string[] generateSockOrder()
+  {
+    System.Random rng = new System.Random();
+    string[] socks = {
+      "SockBeer",
+      "SockCute",
+      "SockFuzzy",
+      "SockGoogly",
+      "SockGoose",
+      "SockMonster",
+      "SockPipeCleaner",
+      "SockPompom",
+      "SockSport",
+      "SockStriped"
+    };
+
+    int n = socks.Length;
+
+    while (n > 1)
+    {
+      n--;
+      int k = rng.Next(n + 1);
+      string value = socks[k];
+      socks[k] = socks[n];
+      socks[n] = value;
+    }
+
+    foreach (string sock in socks)
+    {
+      Debug.Log(sock);
+    }
+
+    return socks;
   }
 
   void UpdateSceneNameAndIndex()
@@ -85,8 +126,6 @@ public class GameManager : MonoBehaviour
     {
       isGameBeingPlayed = false;
     }
-
-    // TODO: When the game ends, set isGameOver to true and advance to the final scene. Not sure where that goes yet.
   }
 
   private IEnumerator Timer(float seconds)
@@ -95,11 +134,5 @@ public class GameManager : MonoBehaviour
     yield return new WaitForSeconds(seconds);
     canAdvanceScene = true;
     Debug.Log("Ready to advance to next scene");
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
   }
 }

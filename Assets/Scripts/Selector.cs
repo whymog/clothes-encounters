@@ -13,16 +13,11 @@ public class Selector : MonoBehaviour
   public AudioClip sockFuzzyAudio;
   public AudioClip sockGooglyAudio;
   public AudioClip sockGooseAudio;
+  public AudioClip sockMonsterAudio;
   public AudioClip sockPipeCleanerAudio;
   public AudioClip sockPompomAudio;
   public AudioClip sockSportAudio;
   public AudioClip sockStripedAudio;
-
-  // Start is called before the first frame update
-  void Start()
-  {
-
-  }
 
   // Update is called once per frame
   void OnTriggerEnter2D(Collider2D collider)
@@ -52,6 +47,10 @@ public class Selector : MonoBehaviour
     else if (collider.name == "SockGoose")
     {
       clipToPlay = sockGooseAudio;
+    }
+    else if (collider.name == "SockMonster")
+    {
+      clipToPlay = sockMonsterAudio;
     }
     else if (collider.name == "SockPipeCleaner")
     {
