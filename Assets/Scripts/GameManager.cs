@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
   private IEnumerator coroutine;
 
-  public static int[] sockOrder;
+  public static string[] sockOrder;
 
   void Start()
   {
@@ -37,30 +37,32 @@ public class GameManager : MonoBehaviour
     this.UpdateSceneNameAndIndex();
 
     sockOrder = generateSockOrder();
+    Debug.Log(sockOrder);
+    Debug.Log(sockOrder[1]);
   }
 
-  int[] generateSockOrder()
+  string[] generateSockOrder()
   {
     System.Random rng = new System.Random();
-    int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    string[] socks = { "SockCute", "SockSport", "SockGoose", "SockGoogly", "SockFuzzy", "SockStriped" };
 
-    int n = numbers.Length;
+    int n = socks.Length;
 
     while (n > 1)
     {
       n--;
       int k = rng.Next(n + 1);
-      int value = numbers[k];
-      numbers[k] = numbers[n];
-      numbers[n] = value;
+      string value = socks[k];
+      socks[k] = socks[n];
+      socks[n] = value;
     }
 
-    foreach (int number in numbers)
+    foreach (string sock in socks)
     {
-      Debug.Log(number);
+      Debug.Log(sock);
     }
 
-    return numbers;
+    return socks;
   }
 
   void UpdateSceneNameAndIndex()

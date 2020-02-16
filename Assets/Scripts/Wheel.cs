@@ -38,37 +38,10 @@ public class Wheel : MonoBehaviour
     else if (Input.GetKeyDown(KeyCode.Space))
     {
       Debug.Log("space!");
-      if (GameManager.turnNumber == 1 && Selector.selectedSock == "SockCute")
-      {
-        GameManager.lastGuessWasCorrect = true;
-        GameManager.player1Score++;
-        GameManager.player2Score++;
-      }
-      else if (GameManager.turnNumber == 2 && Selector.selectedSock == "SockSport")
-      {
-        GameManager.lastGuessWasCorrect = true;
-        GameManager.player1Score++;
-        GameManager.player2Score++;
-      }
-      else if (GameManager.turnNumber == 3 && Selector.selectedSock == "SockGoose")
-      {
-        GameManager.lastGuessWasCorrect = true;
-        GameManager.player1Score++;
-        GameManager.player2Score++;
-      }
-      else if (GameManager.turnNumber == 4 && Selector.selectedSock == "SockGoogly")
-      {
-        GameManager.lastGuessWasCorrect = true;
-        GameManager.player1Score++;
-        GameManager.player2Score++;
-      }
-      else if (GameManager.turnNumber == 5 && Selector.selectedSock == "SockFuzzy")
-      {
-        GameManager.lastGuessWasCorrect = true;
-        GameManager.player1Score++;
-        GameManager.player2Score++;
-      }
-      else if (GameManager.turnNumber == 6 && Selector.selectedSock == "SockStriped")
+
+      string sockName = GameManager.sockOrder[GameManager.turnNumber - 1];
+
+      if (Selector.selectedSock == sockName)
       {
         GameManager.lastGuessWasCorrect = true;
         GameManager.player1Score++;
