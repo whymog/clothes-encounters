@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
       {
         if (GameManager.sceneName == "Results")
         {
-          SceneManager.LoadScene(0);
+          SceneManager.LoadScene(2);
         }
         else
         {
