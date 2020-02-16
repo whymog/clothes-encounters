@@ -29,10 +29,38 @@ public class GameManager : MonoBehaviour
 
   private IEnumerator coroutine;
 
+  public static int[] sockOrder;
+
   void Start()
   {
     DontDestroyOnLoad(this.gameObject);
     this.UpdateSceneNameAndIndex();
+
+    sockOrder = generateSockOrder();
+  }
+
+  int[] generateSockOrder()
+  {
+    System.Random rng = new System.Random();
+    int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+    int n = numbers.Length;
+
+    while (n > 1)
+    {
+      n--;
+      int k = rng.Next(n + 1);
+      int value = numbers[k];
+      numbers[k] = numbers[n];
+      numbers[n] = value;
+    }
+
+    foreach (int number in numbers)
+    {
+      Debug.Log(number);
+    }
+
+    return numbers;
   }
 
   void UpdateSceneNameAndIndex()

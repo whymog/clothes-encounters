@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
   public GameObject ResultText;
   public GameObject ResultTextDescription;
 
+  // TODO: Remove once this is managed by GameManager
   public Sprite SockCute;
   public Sprite SockCuteShadow;
   public Sprite SockFuzzy;
@@ -39,6 +40,35 @@ public class Player : MonoBehaviour
   public Sprite SockSportShadow;
   public Sprite SockStriped;
   public Sprite SockStripedShadow;
+
+  public class Sock
+  {
+    public string sockName;
+    public Sprite sprite;
+    public Sprite silhouette;
+    public string clueOne;
+    public string clueTwo;
+    public string correctText;
+    public string incorrectText;
+
+    public Sock(
+      string name,
+      Sprite spr,
+      Sprite sil,
+      string clue1,
+      string clue2,
+      string correct,
+      string incorrect)
+    {
+      sockName = name;
+      sprite = spr;
+      silhouette = sil;
+      clueOne = clue1;
+      clueTwo = clue2;
+      correctText = correct;
+      incorrectText = incorrect;
+    }
+  }
 
   // Start is called before the first frame update
   void Start()
@@ -99,6 +129,7 @@ public class Player : MonoBehaviour
 
 
         // Hardcoded this shit I am so sorry
+        // TODO: Remove once pulled from GameManager
         if (GameManager.turnNumber == 1)
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockCuteShadow;
