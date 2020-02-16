@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
   public GameObject ResultTextDescription;
 
   // TODO: Remove once this is managed by GameManager
+  public Sprite SockBeer;
+  public Sprite SockBeerShadow;
   public Sprite SockCute;
   public Sprite SockCuteShadow;
   public Sprite SockFuzzy;
@@ -100,7 +102,13 @@ public class Player : MonoBehaviour
 
         string sockName = GameManager.sockOrder[GameManager.turnNumber - 1];
 
-        if (sockName == "SockCute")
+        if (sockName == "SockBeer")
+        {
+          Clue.GetComponent<SpriteRenderer>().sprite = SockBeerShadow;
+          ClueText1.GetComponent<TextMeshProUGUI>().text = "tall boys for your horses";
+          ClueText2.GetComponent<TextMeshProUGUI>().text = "sudsy";
+        }
+        else if (sockName == "SockCute")
         {
           Clue.GetComponent<SpriteRenderer>().sprite = SockCuteShadow;
           ClueText1.GetComponent<TextMeshProUGUI>().text = "keeps you alive";
@@ -176,7 +184,11 @@ public class Player : MonoBehaviour
 
       string sockName = GameManager.sockOrder[GameManager.turnNumber - 1];
 
-      if (sockName == "SockCute")
+      if (sockName == "SockBeer")
+      {
+        Clue.GetComponent<SpriteRenderer>().sprite = SockBeer;
+      }
+      else if (sockName == "SockCute")
       {
         Clue.GetComponent<SpriteRenderer>().sprite = SockCute;
       }
@@ -205,7 +217,12 @@ public class Player : MonoBehaviour
       {
         ResultText.GetComponent<TextMeshProUGUI>().text = "Correct!";
 
-        if (sockName == "SockCute")
+
+        if (sockName == "SockBeer")
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "We had a lot of crazy nights, huh?";
+        }
+        else if (sockName == "SockCute")
         {
           ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "It's from our first Valentine's Day together.";
         }
@@ -234,7 +251,11 @@ public class Player : MonoBehaviour
       {
         ResultText.GetComponent<TextMeshProUGUI>().text = "Incorrect...";
 
-        if (sockName == "SockCute")
+        if (sockName == "SockBeer")
+        {
+          ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "You drink too much for someone your age.";
+        }
+        else if (sockName == "SockCute")
         {
           ResultTextDescription.GetComponent<TextMeshProUGUI>().text = "Our first Valentine's together seems so far away. Are either of us the same people?";
         }

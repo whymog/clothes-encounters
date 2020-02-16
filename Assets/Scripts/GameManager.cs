@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
   string[] generateSockOrder()
   {
     System.Random rng = new System.Random();
-    string[] socks = { "SockCute", "SockSport", "SockGoose", "SockGoogly", "SockFuzzy", "SockStriped" };
+    string[] socks = { "SockBeer", "SockCute", "SockSport", "SockGoose", "SockGoogly", "SockFuzzy", "SockStriped" };
 
     int n = socks.Length;
 

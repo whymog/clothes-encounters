@@ -2513,6 +2513,8 @@ MonoBehaviour:
   TurnTimer: {fileID: 693926817}
   ResultText: {fileID: 1153866570}
   ResultTextDescription: {fileID: 276656464}
+  SockBeer: {fileID: 21300000, guid: 033c6bea47fa0405ba8594163b70ceb0, type: 3}
+  SockBeerShadow: {fileID: 21300000, guid: be4a126a79de144e18addacf95e74426, type: 3}
   SockCute: {fileID: 21300000, guid: bf14108d282ba43099cebaea0c10b208, type: 3}
   SockCuteShadow: {fileID: 21300000, guid: 866266099bead4cc5a576a63f81ea539, type: 3}
   SockFuzzy: {fileID: 21300000, guid: 01df4c4d6056c44d7a54dc64f1054331, type: 3}
@@ -5531,6 +5533,8 @@ MonoBehaviour:
   TurnTimer: {fileID: 1696396473}
   ResultText: {fileID: 513375778}
   ResultTextDescription: {fileID: 233688404}
+  SockBeer: {fileID: 21300000, guid: 033c6bea47fa0405ba8594163b70ceb0, type: 3}
+  SockBeerShadow: {fileID: 21300000, guid: be4a126a79de144e18addacf95e74426, type: 3}
   SockCute: {fileID: 21300000, guid: bf14108d282ba43099cebaea0c10b208, type: 3}
   SockCuteShadow: {fileID: 21300000, guid: 866266099bead4cc5a576a63f81ea539, type: 3}
   SockFuzzy: {fileID: 21300000, guid: 01df4c4d6056c44d7a54dc64f1054331, type: 3}
