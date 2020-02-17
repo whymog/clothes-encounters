@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
+  private Quaternion newRotation;
+  private string rotateDirection;
   private Component[] socks;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -20,51 +23,81 @@ public class Wheel : MonoBehaviour
     }
 
     gameObject.transform.localPosition = new Vector3(0, 0, 0);
+
+    newRotation = transform.localRotation;
+    rotateDirection = "";
   }
 
   // Update is called once per frame
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.LeftArrow))
+    if (rotateDirection == "")
     {
-      // rotate left
-      transform.localRotation *= Quaternion.Euler(0, 0, 360f / 13f);
-      // newRotation = transform.localRotation *= Quaternion.Euler(0, 0, 360f / 13f);
-      // transform.localRotation = Quaternion.Lerp(transform.localRotation, newRotation, Time.time * 0.1f);
-      Debug.Log(transform.localRotation);
-    }
-    else if (Input.GetKeyDown(KeyCode.RightArrow))
-    {
-      //rotate right
-      transform.localRotation *= Quaternion.Euler(0, 0, -360f / 13f);
-      Debug.Log(transform.localRotation);
-    }
-    else if (Input.GetKeyDown(KeyCode.Space))
-    {
-      Debug.Log("space!");
-
-      string sockName = GameManager.sockOrder[GameManager.turnNumber - 1];
-
-      if (Selector.selectedSock == sockName)
+      if (Input.GetKeyDown(KeyCode.LeftArrow))
       {
-        GameManager.lastGuessWasCorrect = true;
-        GameManager.player1Score++;
-        GameManager.player2Score++;
+        // rotate left
+        newRotation = transform.localRotation;
+        newRotation *= Quaternion.Euler(0, 0, 360f / 13f);
+        rotateDirection = "clockwise";
+        StartCoroutine(RotateWheel(30));
       }
-      else
+      else if (Input.GetKeyDown(KeyCode.RightArrow))
       {
-        GameManager.lastGuessWasCorrect = false;
-        if (GameManager.turnNumber % 2 == 0)
+        //rotate right
+        newRotation = transform.localRotation;
+        newRotation *= Quaternion.Euler(0, 0, -360f / 13f);
+        rotateDirection = "counterclockwise";
+        StartCoroutine(RotateWheel(30));
+      }
+      else if (Input.GetKeyDown(KeyCode.Space))
+      {
+        Debug.Log("space!");
+
+        string sockName = GameManager.sockOrder[GameManager.turnNumber - 1];
+
+        if (Selector.selectedSock == sockName)
         {
-          GameManager.player2Score--;
+          GameManager.lastGuessWasCorrect = true;
+          GameManager.player1Score++;
+          GameManager.player2Score++;
         }
         else
         {
-          GameManager.player1Score--;
+          GameManager.lastGuessWasCorrect = false;
+          if (GameManager.turnNumber % 2 == 0)
+          {
+            GameManager.player2Score--;
+          }
+          else
+          {
+            GameManager.player1Score--;
+          }
         }
+
+        GameManager.isEndOfTurn = true;
+      }
+    }
+  }
+
+  IEnumerator RotateWheel(int frames)
+  {
+    int currentFrame = 0;
+
+    while (currentFrame < frames)
+    {
+      if (rotateDirection == "clockwise")
+      {
+        transform.localRotation *= Quaternion.Euler(0, 0, 360f / (13f * (float)frames));
+      }
+      else if (rotateDirection == "counterclockwise")
+      {
+        transform.localRotation *= Quaternion.Euler(0, 0, -360f / (13f * (float)frames));
       }
 
-      GameManager.isEndOfTurn = true;
+      currentFrame++;
+      yield return new WaitForEndOfFrame();
     }
+
+    rotateDirection = "";
   }
 }
