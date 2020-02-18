@@ -20,13 +20,6 @@ public class GameManager : MonoBehaviour
   public static int turnNumber = 0;
   public static int maxTurns = 6;
 
-  public static string correctSock1 = "Cute";
-  public static string correctSock2 = "Sport";
-  public static string correctSock3 = "Goose";
-  public static string correctSock4 = "Googly";
-  public static string correctSock5 = "Fuzzy";
-  public static string correctSock6 = "Striped";
-
   private IEnumerator coroutine;
 
   public static string[] sockOrder;
@@ -46,15 +39,18 @@ public class GameManager : MonoBehaviour
     System.Random rng = new System.Random();
     string[] socks = {
       "SockBeer",
+      "SockBlackTie",
       "SockCute",
       "SockFuzzy",
       "SockGoogly",
       "SockGoose",
+      "SockMermaid",
       "SockMonster",
       "SockPipeCleaner",
       "SockPompom",
       "SockSport",
-      "SockStriped"
+      "SockStriped",
+      "SockTall"
     };
 
     int n = socks.Length;
