@@ -33,21 +33,21 @@ public class Wheel : MonoBehaviour
     {
         if (rotateDirection == "")
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") > 0 || Input.GetAxisRaw("Horizontal dpad") > 0)
+            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxisRaw("Horizontal dpad") > 0)
             {
                 // rotate left
                 newRotation = transform.localRotation;
                 newRotation *= Quaternion.Euler(0, 0, 360f / 13f);
                 rotateDirection = "clockwise";
-                StartCoroutine(RotateWheel(30));
+                StartCoroutine(RotateWheel(60));
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("Horizontal") < 0 || Input.GetAxisRaw("Horizontal dpad") < 0)
+            else if (Input.GetAxis("Horizontal") < 0 || Input.GetAxisRaw("Horizontal dpad") < 0)
             {
                 //rotate right
                 newRotation = transform.localRotation;
                 newRotation *= Quaternion.Euler(0, 0, -360f / 13f);
                 rotateDirection = "counterclockwise";
-                StartCoroutine(RotateWheel(30));
+                StartCoroutine(RotateWheel(60));
             }
             else if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2"))
             {
